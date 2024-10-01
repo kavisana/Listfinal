@@ -16,13 +16,9 @@ def display_items():
   pass
 
 def get_item_number():
-  while True:
-    print('Drinks', [d.replace('\u200b','') for d in data.menu_items if d[0] == 'D'])
-    print('Appetizers', [d.replace('\u200b','') for d in data.menu_items if d[0] == 'A'])
-    #write code for displaying the other dishes also
-    order_item = input('Enter dish number and quantity: ')
-    if order_item.split()[0] in data.all_items:
-      return order_item
-    else:
-      print('Invalid dish number.  Please try again')
+ order_item = input("Enter dish number and quantity (e.g., D1 2): ")
+ if order_item.split()[0] in data.all_items:
+        return order_item
+ else:
+      print("Invalid item code. Please try again.")
 
