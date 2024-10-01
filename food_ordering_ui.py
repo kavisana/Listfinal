@@ -24,6 +24,14 @@ def make_order(menu_choice):
   user_selection = functions.get_item_number()
   item_code, quantity = user_selection.split()
   print(functions.get_item_information(item_code))
+  item_name, item_price = functions.get_item_information(item_code)
+  if item_name:
+            print(f"Item added: {item_name}, Quantity: {quantity}, Unit Price: ${item_price}")
+            # Store the item and quantity (implement how you want to store orders)
+            # Example: orders.append((item_name, int(quantity), item_price * int(quantity)))
+  else:
+      print("Invalid item code. Please try again.")
+  more_items = input("Add more items? (Y/N): ").upper()
 
 def close_order(menu_choice):
   print('Functionality for menu choice ', menu_choice)
